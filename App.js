@@ -33,6 +33,7 @@ import ScrollableTabView,
 } from 'react-native-scrollable-tab-view';
 
 import MyTabBar from "./MyTabBar";
+import FlatListBasics from './pages/FlatListBasics';
 
 let ScreenWidth = Dimensions.get('window').width;
  class App extends Component {
@@ -67,11 +68,9 @@ let ScreenWidth = Dimensions.get('window').width;
          // console.log('onScroll Called',obj);
         }}
       >
-       <View tabLable='主页'>
-          <Text>
+       <View tabLable='主页' style={styles.item}>
+        <FlatListBasics/>
   
-          主页
-        </Text>
        </View>
 
         <View tabLabel = '图书'>
@@ -99,6 +98,10 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor:'red'
   },
+  item:{
+    textAlign:'center',
+    backgroundColor:'#f2f2f2'
+  }
 });
 
 export default App;
