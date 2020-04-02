@@ -81,6 +81,10 @@ let ScreenWidth = Dimensions.get('window').width;
                 style={{height: 20,color:'black','marginLeft':5,'flex':1}}
                 placeholder="文艺作品中打动你的"
               />
+              <Image 
+                source={require('./assets/images/sao.png')}
+                style={{width:20,height:20}}
+              />
             </View>
             <Image
                 source={require('./assets/images/letters.png')}
@@ -116,18 +120,17 @@ const styles = StyleSheet.create({
     height: 2,
   },
   header:{
-    flex:1,
     alignItems: 'center',
     justifyContent:'space-around',
     height:80,
-    marginTop:30,
-    marginBottom:30,
+   // marginTop:30,
+    marginBottom:10,
     flexDirection:'row',
-    backgroundColor:'green'
+    backgroundColor:'#00B51D'
   },
   searchBox:{  
     height:40,
-    backgroundColor:'gray',
+    backgroundColor:'#999999',
     flexDirection:'row',
     padding:10,
     overflow:'hidden',
