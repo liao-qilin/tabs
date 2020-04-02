@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     tabs:{
         flexDirection: 'row',
         height: 50,
+        marginTop:10
     },
     tab:{
         flex: 1,

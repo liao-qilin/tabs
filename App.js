@@ -15,7 +15,8 @@ import {
   Text,
   StatusBar,
   Dimensions,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
 
 import {
@@ -33,6 +34,7 @@ import ScrollableTabView,
 } from 'react-native-scrollable-tab-view';
 
 import MyTabBar from "./MyTabBar";
+import SearchBar from "./SearchBar";
 import FlatListBasics from './pages/FlatListBasics';
 
 let ScreenWidth = Dimensions.get('window').width;
@@ -68,11 +70,27 @@ let ScreenWidth = Dimensions.get('window').width;
          // console.log('onScroll Called',obj);
         }}
       >
-       <View tabLable='主页' style={styles.item}>
-        <FlatListBasics/>
-  
-       </View>
-
+        <View>
+          <View style={styles.header}>
+            <View style={styles.searchBox}>
+              <Image 
+                source={require('./assets/images/search.png')}
+                style={{width:20,height:20}}
+              />
+              <TextInput
+                style={{height: 20,color:'black','marginLeft':5,'flex':1}}
+                placeholder="文艺作品中打动你的"
+              />
+            </View>
+            <Image
+                source={require('./assets/images/letters.png')}
+                style={{width:30,height:30,lineHeight:30,padding:10}}
+            />
+          </View>
+          <View tabLable='主页'>
+            <FlatListBasics/>
+          </View>
+        </View>
         <View tabLabel = '图书'>
           <Text>图书</Text>
         </View>
@@ -91,16 +109,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 20,
-    backgroundColor: '#F5FCFF',
+    //backgroundColor: '#F5FCFF',
   },
   lineStyle: {
     width: ScreenWidth / 4,
     height: 2,
-    backgroundColor:'red'
   },
-  item:{
-    textAlign:'center',
-    backgroundColor:'#f2f2f2'
+  header:{
+    flex:1,
+    alignItems: 'center',
+    justifyContent:'space-around',
+    height:80,
+    marginTop:30,
+    marginBottom:30,
+    flexDirection:'row',
+    backgroundColor:'green'
+  },
+  searchBox:{  
+    height:40,
+    backgroundColor:'gray',
+    flexDirection:'row',
+    padding:10,
+    overflow:'hidden',
+    width:ScreenWidth-80,
+    borderRadius:30
   }
 });
 
