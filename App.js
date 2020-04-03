@@ -135,8 +135,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'space-around',
     height:80,
-   // marginTop:30,
-    marginBottom:10,
     flexDirection:'row',
     backgroundColor:'#00B51D'
   },
