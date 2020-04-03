@@ -32,13 +32,13 @@ export default class FlatListBasics extends Component {
                   </View>
                 </View>
               </View>
-              <Text style={styles.conent}>
+              <Text style={styles.content}>
               OK进口法国境内图片sdfs 史蒂芬森沈德符sf方式方式奋斗沙发上电风扇分
               </Text>
               <View style={styles.itemBottom}>
                 <View>
                   <Image 
-                      source={require('../assets/images/comment.png')}
+                      source={require('../assets/images/like.png')}
                       style={{width: 20, height: 20,margin:10}}
                   />
                 </View>
@@ -50,7 +50,7 @@ export default class FlatListBasics extends Component {
                 </View>
                 <View>
                   <Image 
-                      source={require('../assets/images/comment.png')}
+                      source={require('../assets/images/share.png')}
                       style={{width: 20, height: 20,margin:10}}
                   />
                 </View>
@@ -65,6 +65,7 @@ export default class FlatListBasics extends Component {
 
 const styles = StyleSheet.create({
   item: {
+    flex: 1,
     fontSize: 18,
     marginBottom:10,
     color:'#ffffff',
@@ -72,7 +73,6 @@ const styles = StyleSheet.create({
     paddingTop:10
   },
   itemBottom: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   itemUserInfo: {
-    flex:1,
+    flex: 1,
     margin : 10,
   },
   action: {
@@ -91,8 +91,7 @@ const styles = StyleSheet.create({
     marginTop:5
   },
   content:{
-      marginLeft: 30,
-      flex:1,
+      marginLeft: 10,
       flexDirection: 'row',
       letterSpacing:2
   },
