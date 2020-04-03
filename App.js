@@ -16,7 +16,9 @@ import {
   StatusBar,
   Dimensions,
   Image,
-  TextInput
+  TextInput,
+  Platform,
+  NativeModules
 } from 'react-native';
 
 import {
@@ -38,6 +40,16 @@ import SearchBar from "./SearchBar";
 import FlatListBasics from './pages/FlatListBasics';
 
 let ScreenWidth = Dimensions.get('window').width;
+const { StatusBarManager } = NativeModules;
+let statusBarHeight;
+	if (Platform.OS === "ios") {
+	     StatusBarManager.getHeight(height => {
+	         statusBarHeight = height;
+	     });
+	 } else {
+	     statusBarHeight = StatusBar.currentHeight;
+}
+
  class App extends Component {
 
   constructor(props){
@@ -70,6 +82,7 @@ let ScreenWidth = Dimensions.get('window').width;
          // console.log('onScroll Called',obj);
         }}
       >
+        <SafeAreaView>
         <View>
           <View style={styles.header}>
             <View style={styles.searchBox}>
@@ -91,10 +104,11 @@ let ScreenWidth = Dimensions.get('window').width;
                 style={{width:30,height:30,lineHeight:30,padding:10}}
             />
           </View>
-          <View tabLable='主页'>
+          <View tabLable='主页' style={{backgroundColor:'#f7f7f7'}}>
             <FlatListBasics/>
           </View>
         </View>
+        </SafeAreaView>
         <View tabLabel = '图书'>
           <Text>图书</Text>
         </View>
@@ -111,9 +125,7 @@ let ScreenWidth = Dimensions.get('window').width;
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 20,
-    //backgroundColor: '#F5FCFF',
+    flex: 1
   },
   lineStyle: {
     width: ScreenWidth / 4,
@@ -130,9 +142,10 @@ const styles = StyleSheet.create({
   },
   searchBox:{  
     height:40,
-    backgroundColor:'#999999',
+    backgroundColor:'#f2f2f2',
     flexDirection:'row',
     padding:10,
+    color:'#404040',
     overflow:'hidden',
     width:ScreenWidth-80,
     borderRadius:30

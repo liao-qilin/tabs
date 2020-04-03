@@ -65,11 +65,11 @@ export default class FlatListBasics extends Component {
 
 const styles = StyleSheet.create({
   item: {
-    padding: 10,
     fontSize: 18,
     marginBottom:10,
-    marginTop:10,
-    color:'#ffffff'
+    color:'#ffffff',
+    backgroundColor:'white',
+    paddingTop:10
   },
   itemBottom: {
     flex: 1,
