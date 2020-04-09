@@ -20,8 +20,9 @@ class MyTabBar extends Component {
         onPress={()=>{
           this.props.goToPage(index)
         }}
+        key={index}
         >
-        <View style={styles.tabItem}>
+        <View style={styles.tabItem} >
           <Image
             style={styles.tabIcon}
             source={icon}

@@ -18,7 +18,7 @@ export default class FlatListBasics extends Component {
           renderItem={
            
             ({item}) =>  
-            <View style={styles.item}>
+            <View style={styles.item} key={item.key}>
               <View style={styles.itemTop}>
                   <Image 
                   source={{uri:'https://cdn.huodao.hk/zlj_default_ava.png'}}

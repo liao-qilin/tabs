@@ -18,7 +18,7 @@ import {
   Image,
   TextInput,
   Platform,
-  NativeModules
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -38,6 +38,7 @@ import ScrollableTabView,
 import MyTabBar from "./MyTabBar";
 import SearchBar from "./SearchBar";
 import FlatListBasics from './pages/FlatListBasics';
+import User from './pages/user';
 
 let ScreenWidth = Dimensions.get('window').width;
 const { StatusBarManager } = NativeModules;
@@ -69,6 +70,8 @@ let statusBarHeight;
     let tabNames = this.state.tabNames;
     let tabIcons = this.state.tabIcons;
     return (
+      <>
+      <StatusBar barStyle="dark-content" />
       <ScrollableTabView
         style={styles.container}
         renderTabBar={() => <MyTabBar tabNames={tabNames} tabIcons={tabIcons}/>}
@@ -101,7 +104,7 @@ let statusBarHeight;
             </View>
             <Image
                 source={require('./assets/images/letters.png')}
-                style={{width:30,height:30,lineHeight:30,padding:10}}
+                style={{width:30,height:30,padding:10}}
             />
           </View>
           <View tabLable='主页' style={{backgroundColor:'#f7f7f7'}}>
@@ -116,10 +119,11 @@ let statusBarHeight;
           <Text>小组</Text>
         </View>
         <View tabLabel = '我的'>
-          <Text>我的</Text>
+          <User/>
         </View>
       
       </ScrollableTabView>
+      </>
     );
   }
 }
